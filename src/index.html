@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="lib/moment.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Quando a Data cair no sabado ou domingo preciso adicionar dias ate chegar na segunda feira 
+    let formato = "2020-04-18";
+    console.log("Data de Prevista: " + formato)
+    let res = moment(formato).day() === 6 ? moment(formato).add(2, 'days') :
+                  moment(formato).day() === 0 ? moment(formato).add(1, 'days') : formato;
+    console.log("Data de Fechamento: " + moment(res).format("YYYY-MM-DD"));
+  </script>
+</body>
+
+</html>
